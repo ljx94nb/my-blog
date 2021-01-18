@@ -1,0 +1,21 @@
+{
+  "name": "vuepress-starter",
+  "version": "1.0.0",
+  "description": "CloudBase Framework VuePress Example",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build",
+    "deploy": "cloudbase framework deploy"
+  },
+  "author": "BookerZhao",
+  "license": "ISC",
+  "dependencies": {
+    "leancloud-storage": "^4.3.1",
+    "valine": "^1.3.10",
+    "vuepress-plugin-comment": "^0.7.3"
+  },
+  "devDependencies": {
+    "vuepress": "^1.5.0"
+  }
+}
