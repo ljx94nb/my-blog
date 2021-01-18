@@ -1,6 +1,7 @@
 module.exports = {
   title: '渊辰的博客',
   description: '记录了渊辰小同学的学习日记',
+  theme: 'reco',
   head: [
     [
       'link',
@@ -11,38 +12,48 @@ module.exports = {
     ]
   ],
   themeConfig: {
+    type: 'blog',
+    codeTheme: 'okaidia',
     nav: [
       {
         text: 'Vue',
-        link: '/Vue/'
+        link: '/Vue/',
+        icon: 'reco-date'
       },
       {
         text: 'React',
-        link: '/React/'
+        link: '/React/',
+        icon: 'reco-date'
       },
       {
         text: 'TypeScript',
-        link: '/ts/'
+        link: '/ts/',
+        icon: 'reco-date'
       },
       {
         text: 'JavaScript',
-        link: '/js/'
+        link: '/js/',
+        icon: 'reco-date'
       },
       {
         text: 'html',
-        link: '/html/'
+        link: '/html/',
+        icon: 'reco-date'
       },
       {
         text: 'LeetCode',
-        link: '/LeetCode/'
+        link: '/LeetCode/',
+        icon: 'reco-date'
       },
       {
         text: 'Interview experience',
-        link: '/Interview_experience/'
+        link: '/Interview_experience/',
+        icon: 'reco-date'
       },
       {
         text: 'MarkDown',
-        link: '/MarkDown/'
+        link: '/MarkDown/',
+        icon: 'reco-date'
       }
     ],
     sidebar: {
