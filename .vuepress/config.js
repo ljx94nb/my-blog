@@ -1,7 +1,6 @@
 module.exports = {
   title: '渊辰的博客',
   description: '记录了渊辰小同学的学习日记',
-  base: '/vuepress/',
   head: [
     [
       'link',
