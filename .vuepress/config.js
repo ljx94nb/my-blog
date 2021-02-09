@@ -61,8 +61,8 @@ module.exports = {
       '/ts/': ['', 'higher'],
       '/MarkDown/': [''],
       '/Vue/': ['', 'observer'],
-      '/js/': ['', 'parallel_request'],
-      '/LeetCode/': ['', 'merge_ordered_arrays'],
+      '/js/': ['', 'parallel_request', 'write_promise', 'dfs_and_bfs', 'write_call_apply_bind', 'lru_cache'],
+      '/LeetCode/': ['', 'merge_ordered_arrays', 'permute'],
       '/React/': ['', 'jichu', 'redux', 'hooks'],
       '/html/': ['', 'html5_api']
     }
