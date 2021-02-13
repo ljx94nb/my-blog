@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "envId": "my-serverless-2gk2td9k79b09fc4",
+  "envId": "vue-cloudbase-1gpyv62t59ee1ed8",
   "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
   "functionRoot": "./functions",
   "functions": [],
