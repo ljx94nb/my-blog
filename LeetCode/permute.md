@@ -106,3 +106,86 @@ var letterCombinations = function(digits) {
   }
 };
 ```
+
+# 47. 全排列 II
+
+给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
+
+示例 1：
+输入：nums = [1,1,2]
+输出：
+[[1,1,2],[1,2,1],[2,1,1]]
+
+示例 2：
+输入：nums = [1,2,3]
+输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ef6ca8a013504d59a995b6b3b33cf132~tplv-k3u1fbpfcp-zoom-1.image '解题思路')
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permuteUnique = function(nums) {
+  // 先给数组排序
+  nums.sort();
+  let res = [];
+  // 存放每个结果数组下标的使用情况的map
+  let vis = {};
+  let dfs = t => {
+    if (t.length === nums.length) {
+      res.push(t);
+      return;
+    }
+    for (let i = 0; i < nums.length; i++) {
+      // 当前下标使用过了，防止一个数被使用两次
+      if (vis[i]) continue;
+      // 同一层有相同的数时（nums[i] == nums[i - 1]），前一个数使用完成vis[i - 1] === false，且i - 1存在
+      if (i - 1 >= 0 && nums[i] == nums[i - 1] && !vis[i - 1]) continue;
+      vis[i] = true;
+      t.push(nums[i]);
+      dfs([...t]);
+      t.pop();
+      vis[i] = false;
+    }
+  };
+  dfs([]);
+  return res;
+};
+```
+
+# ** 最后总结回溯算法的万能公式 **
+
+```js
+var permuteUnique = function(nums) {
+  // 先给数组排序，字符串数组也一样
+  nums.sort();
+  // 存放最终结果的数组
+  let res = [];
+  // 存放每个结果数组下标的使用情况的map
+  let visit = {};
+  dfs([]);
+  return res;
+
+  function dfs(t) {
+    if (t.length === nums.length) {
+      res.push(t);
+      return;
+    }
+    for (let i = 0; i < nums.length; i++) {
+      // 当前下标使用过了，防止一个数被使用两次
+      if (visit[i]) continue;
+      // 处理有相同项的情况如nums = [1, 1, 2]：
+      // 同一层有相同的数时（nums[i] === nums[i - 1]），前一个数使用完成visit[i - 1] === false，且i - 1存在
+      if (i - 1 >= 0 && nums[i] == nums[i - 1] && !visit[i - 1]) continue;
+      // 以下为固定写法：
+      visit[i] = true;
+      t.push(nums[i]);
+      dfs([...t]);
+      t.pop();
+      visit[i] = false;
+    }
+  }
+};
+```
